@@ -1,83 +1,46 @@
-# 🎓 PF-Lenzberg – Sistema de Gestión de Cursos
+# Gestión académica — Angular
 
-**Entrega Final del Curso de Angular en Coderhouse**  
-Proyecto aprobado con Angular y TypeScript.
+Aplicación web para administrar alumnos y cursos. Incluye autenticación, permisos de administrador, navegación protegida y manejo de estado global con NgRx.
 
-## 📚 Descripción
+## Funcionalidades
 
-Este proyecto es una aplicación web básica diseñada para gestionar cursos, estudiantes y docentes. Permite a los usuarios:
+- Inicio de sesión y estado de sesión.
+- Guards para usuarios autenticados y administradores.
+- Alta, edición y listado de alumnos.
+- Alta, edición, detalle y listado de cursos.
+- Pipes personalizados para fechas y valores booleanos.
+- Estado de cursos y autenticación con NgRx.
+- Pruebas unitarias de componentes, servicios, guards, pipes y reducers.
 
-- Visualizar una lista de cursos disponibles.
-- Inscribirse en cursos.
-- Administrar cursos (crear, editar y eliminar) para usuarios con perfil de administrador.
+## Stack
 
-## 👥 Roles de Usuario
+- Angular 15 y TypeScript
+- Angular Material y CDK
+- NgRx Store, Effects y DevTools
+- RxJS
+- Jasmine y Karma
 
-- **Administrador**:
-  - Crear nuevos cursos con fechas e inscripciones.
-  - Editar y eliminar cursos existentes.
-- **Usuario Estudiante**:
-  - Visualizar cursos disponibles.
-  - Inscribirse en cursos.
+## Arquitectura
 
-## 🛠️ Tecnologías Utilizadas
+La aplicación se divide en módulos de `autenticacion`, `alumnos`, `cursos`, `core` y `shared`. Los modelos viven en `src/app/models`; los guards y servicios transversales en `core`; y el estado de negocio en carpetas `state`.
 
-- Angular CLI 15.1.1
-- TypeScript
-- HTML5 y CSS3
+## Ejecución
 
-## 🚀 Instrucciones para Ejecutar el Proyecto
-
-1. **Clonar el repositorio**:
-   ```bash
-   git clone https://github.com/tristanlgb/PF-Lenzberg.git
-   cd PF-Lenzberg
-   ```
-
-2. **Instalar dependencias**:
-   ```bash
-   npm install
-   ```
-
-3. **Iniciar el servidor de desarrollo**:
-   ```bash
-   ng serve
-   ```
-
-4. **Acceder a la aplicación**:
-   Abre tu navegador en `http://localhost:4200/`.
-
-## 🧪 Scripts Disponibles
-
-- `ng serve`: Inicia el servidor de desarrollo.
-- `ng build`: Compila la aplicación para producción.
-- `ng test`: Ejecuta pruebas unitarias con Karma.
-- `ng e2e`: Ejecuta pruebas end-to-end (requiere configuración adicional).
-
-## 📁 Estructura del Proyecto
-
-```
-PF-Lenzberg/
-├── src/
-│   ├── app/
-│   │   ├── components/       # Componentes de la aplicación
-│   │   ├── services/         # Servicios para la lógica de negocio
-│   │   ├── models/           # Interfaces y modelos de datos
-│   │   └── app.module.ts     # Módulo principal de la aplicación
-├── angular.json              # Configuración de Angular CLI
-├── package.json              # Dependencias y scripts del proyecto
-├── tsconfig.json             # Configuración de TypeScript
-└── README.md                 # Documentación del proyecto
+```bash
+npm install
+npm start
 ```
 
-## 📌 Notas Adicionales
+Abrir `http://localhost:4200`.
 
-- Este proyecto fue desarrollado como parte del curso de Angular en Coderhouse.
-- Actualmente, la persistencia de datos es en memoria; no se utiliza una base de datos.
-- Se recomienda implementar autenticación y almacenamiento persistente para un entorno de producción.
+## Comandos
 
-## 👨‍💻 Autor
+```bash
+npm run build
+npm test
+npm run watch
+```
 
-**Tristan Lenzberg**  
-Desarrollador Full Stack  
-[GitHub](https://github.com/tristanlgb) | [LinkedIn](https://ar.linkedin.com/in/tristan-lenzberg-9b13422b3)
+La configuración del entorno se encuentra en `src/environment/environment.ts`.
+
+> Proyecto final educativo orientado a arquitectura modular, routing, formularios y estado reactivo en Angular.
